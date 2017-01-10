@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="styles/vendor/font-awesome.min.css">
+    <!-- bower:css -->
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <!-- endbower -->
+    <link href="styles/chromestyle.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+  </head>
+  <body class="blackcart-login">
+    <div class="blackcart-popup-container">
+      <div class="loading">Loading . . .</div>
+      <div class="alert alert-danger blackcart-auth-failure fade-in hidden" style="margin:20px 0 0;text-align:center;padding:10px 15px;">
+        Something went wrong
+      </div>
+      <form class="form-signin hidden" id="blackcart-signin-form" action="">
+        <h2 class="form-signin-heading">Login</h2>
+        <label for="email" class="sr-only">Email</label>
+        <input type="email" id="email" class="form-control" placeholder="Email" required="" autofocus>
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" id="password" class="form-control" placeholder="Password" required="">
+        <!-- <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div> -->
+        <button class="btn btn-lg btn-primary btn-block btn-cmlogin" type="submit">
+          <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate login-process hidden"></span>
+          LOGIN
+        </button>
+      </form>
+
+      <div class="logged-in-user hidden" style="padding-top:10px;">
+        <div class="alert alert-success fade-in blackcart-status hidden" style="margin-top:10px;padding:10px 15px 0;">
+          <h6 style="margin-top:0;">BlackCart is active on this website! <a id="open-cart" type="submit" tabindex="-1" href="#">Open Cart</a></h6>
+        </div>
+        <div class="blackcart-brands-container">
+          <div class="container-fluid brands-wrapper">
+            <h4 align="center" style="padding:15px 10px 10px;margin:0 0 10px 0;border-bottom:1px solid #ccc">Supported Retailers</h4>
+            <div class="row"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- build:js scripts/vendor.js -->
+    <script src="scripts/vendor/underscore-min.js"></script>
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbower -->
+    <script src="scripts/vendor/backbone-min.js"></script>
+    <!-- endbuild -->
+    <!-- build:js scripts/popup.js -->
+    <script src="scripts/config.js"></script>
+    <script src="scripts/blackcart.js"></script>
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/views/brands.popup.js"></script>
+    <script src="scripts/popup.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

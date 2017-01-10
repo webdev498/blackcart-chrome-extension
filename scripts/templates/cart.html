@@ -1,0 +1,70 @@
+<div class="chrome-widget">
+  <div class="cont_tlo">
+    <div class="blackcart-spinner cart-spinner hidden">
+      <i class="fa fa-spinner fa-spin fa-3x"></i>
+    </div>
+    <div class="arr"></div>
+    <div class="cont_tlo_hed"> 
+      <a href="https://blackcart.co/members" target="_blank"><img src="<%- chromeURL('images/sub/logo_hed.png') %>" width="100"></a>
+      <span>
+        <% if(order.OrderNo) {%>
+          Order #<%- order.OrderNo %><div class="tooltip-close" style="float:right;"><a href="#"><i class="fa fa-minus-circle fa-1x" id="minimize-cart"></i></a> <span class="tooltiptext" style="top:-5px;right:26px;">minimize</span></div></span> 
+        <% } else {%>
+          Order #
+        <% } %>
+      </span>
+    </div>
+    <div class="cont_tlo_body2">
+      <div class="scroll_body">
+        <div class="cont_tlo_body_page">
+          <% if(!order || !order.length){ %>
+            <p style="margin:10px 0;font-family: sans-serif;">Your cart is empty.</p>
+          <% } else { %>
+          <!--<div style="background:#FFFCE2;font-size:10px;padding:6px;border-bottom:1px solid #FCF19C;font-family: sans-serif;" align="center"><a class="refresh-cart-btn" style="color:#000;"><strong>Tip:</strong> Your cart syncs across all pages automatically!</a></div>-->
+          <% } %>
+          <% order.each(function(item){ %>
+            <div class="cont_tlo_body_page_adress block" id="model-<%- item.cid %>" data-model-id="<%- item.cid %>">
+              <div class="desc_tlo_pages_section">
+                <div class="float_left">
+                  <div class="sec1_desctop" id="sec">
+                    <div class="sec11_img">
+                      <a href="<%- item.get('PageURL') %>" target="_blank">
+                        <% var thumbnailURL = item.get('PThumbnail'); %>
+                        <% if(thumbnailURL && (thumbnailURL.indexOf('imgur') >= 0)){ %>
+                          <img src="<%- thumbnailURL.replace('http://','https://') %>"/>
+                        <% } else if (thumbnailURL.startsWith('https://')){ %>
+                          <img src="<%- thumbnailURL %>"/>
+                        <% } else { %>
+                          <img src="https://blackcart.co/thumbnail.php?url=<%- fixThumbnailURL(item.get('PThumbnail')) %>"/>
+                        <% } %>
+                      </a>
+                    </div>
+                    <div class="sec11_desc"> <b><a href="<%- item.get('PageURL') %>" target="_blank" style="color:#333;"><%- item.get('PName') %></a></b>
+                      <p>from <%- item.get('PSource') %></p>
+                      <span style="color:rgb(140,140,140);font-size:12px;">Keep for <strong class="b1">$<%- item.get('Price') %></strong></span>
+                    </div>
+                  </div>
+                  <div class="sec2_desctop tooltip-close"> 
+                    <a href="#" class="cancel-item"><i class="fa fa-times-circle fa-1x"></i></a> 
+                    <span class="tooltiptext">remove</span> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% }); %>
+        </div>
+      </div>
+      <% if(!order || !order.length){ } else { %>
+      <div style="background:#F9F9F9;font-size:12px;padding:6px;font-family:sans-serif;border-top:1px solid #ccc;margin-top:-2px;" align="center">Try everything in your cart at home, <strong>free</strong>!</div>
+      <% } %>
+      <div class="button" style="margin:0;border-top:1px solid #CCC;">
+         <div class="a21">
+         	<a href="#" id="a1-1" class="buttons">Shop More Retailers</a>
+         </div>
+         <div class="a22">
+            <a href="confirm.html" id="a2-2" class="buttons <%- order.length ? 'enabled':'disabled'%>" style="line-height:45px;margin:0;">Checkout</a>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>

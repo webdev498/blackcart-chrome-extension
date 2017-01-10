@@ -1,0 +1,351 @@
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSsDdSZkkecOE1hvV7ZHvhyU.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzMDdSZkkecOE1hvV7ZHvhyU.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTcDdSZkkecOE1hvV7ZHvhyU.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/yYRnAC2KygoXnEC8IdU0gQLUuEpTyoUstqEm5AMlJo4.ttf) format('truetype');
+}
+.hidden,
+.blackcart-container-el.hidden {
+  display: none !important;
+}
+.blackcart-retailers-view {
+  position: fixed;
+  top: 200px;
+  left: calc(-250%);
+  z-index: 1000;
+}
+.blackcart-loading-view {
+  position: fixed;
+  top: 270px;
+  left: calc(-125%);
+  z-index: 1000;
+}
+.blackcart-loading-view.blackcart-retailer-shopbop {
+  z-index: 2000;
+}
+.blackcart-loading-view.blackcart-retailer-reitmans {
+  z-index: 1100;
+}
+.blackcart-loading-view.blackcart-retailer-joe-fresh {
+  z-index: 1100;
+}
+.blackcart-loading-view.blackcart-retailer-urban-outfitters {
+  z-index: 4000;
+}
+.blackcart-loading-view.blackcart-retailer-marciano {
+  z-index: 8000;
+}
+.blackcart-loading-view.blackcart-retailer-club-monaco{
+  z-index: 1500;
+}
+.blackcart-loading-view.blackcart-retailer-hollister {
+  z-index: 10000;
+}
+.blackcart-loading-view.blackcart-retailer-the-shoe-company {
+  z-index: 10000;
+}
+.blackcart-loading-view.blackcart-retailer-town-shoes {
+  z-index: 10000;
+}
+.blackcart-loading-view.blackcart-retailer-dynamite {
+  z-index: 10000;
+}
+.blackcart-loading-view.blackcart-retailer-garage {
+  z-index: 10000;
+}
+.blackcart-loading-view.blackcart-retailer-jack--jones {
+  z-index: 9999;
+}
+.blackcart-loading-view.blackcart-retailer-american-eagle {
+  z-index: 99999;
+}
+.blackcart-loading-view.blackcart-retailer-billabong {
+  z-index: 99999;
+}
+.blackcart-loading-view.blackcart-retailer-melanie-lyne {
+  z-index: 9999;
+}
+.blackcart-loading-view.blackcart-retailer-under-armour {
+  z-index: 9999;
+}
+.blackcart-loading-view.blackcart-retailer-guess {
+  z-index: 99999;
+}
+.blackcart-loading-view.blackcart-retailer-rwco {
+  z-index: 1100;
+}
+.blackcart-loading-view.blackcart-retailer-forever-21 {
+  z-index: 100000000;
+}
+.blackcart-loading-view.blackcart-retailer-browns-shoes {
+  z-index: 1099;
+}
+.blackcart-loading-view.blackcart-retailer-running-room {
+  z-index: 9999;
+}
+.blackcart-loading-view.blackcart-retailer-bench {
+  z-index: 1100;
+}
+.blackcart-loading-view.blackcart-retailer-east-dane {
+  z-index: 9999;
+}
+.blackcart-loading-view.blackcart-retailer-simons {
+  z-index: 1101;
+}
+.blackcart-loading-view.blackcart-retailer-the-bay,
+.blackcart-loading-view .blackcart-retailer-topshop,
+.blackcart-loading-view .blackcart-retailer-topman {
+  z-index: 100010;
+}
+.modal_smal {
+  margin-top: 0;
+}
+.blackcart-icon-wrapper {
+  height: 40px;
+  width: 40px;
+  /*background:#111;*/
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  box-shadow: 0 0 15px 0 rgba(180, 180, 180, 0.4);
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  z-index: 10000;
+  /* &:hover {
+    background:#333;
+  } */
+}
+.blackcart-icon-wrapper.blackcart-retailer-hm {
+  z-index: 9999;
+}
+
+.blackcart-icon-wrapper.blackcart-retailer-east-dane {
+  z-index: 9999;
+}
+.blackcart-cart.blackcart-retailer-american-eagle {
+  z-index: 99999;
+}
+.blackcart-btn-wrapper,
+.blackcart-cart,
+.blackcart-confirm,
+.blackcart-success {
+  font-size: 14px;
+}
+.blackcart-btn-wrapper {
+  clear: both;
+}
+/* Custom styling for specific retailers */
+.aldoshoes-btn {
+  float: right;
+  width: 405px;
+  margin-top: -75px;
+}
+.mkors-btn {
+  position: relative;
+  top: -125px;
+  float: right;
+  margin-right: -10px;
+}
+.scotch-soda-btn {
+  position: absolute;
+  left: 800px;
+  top: 363px;
+  z-index: 100;
+}
+.blackcart-icon-wrapper.blackcart-retailer-shoptiques {
+  z-index: 99998 !important;
+}
+.blackcart-retailer-shoptiques {
+  z-index: 99999 !important;
+}
+.blackcart-icon-wrapper.blackcart-retailer-shopbop {
+  z-index: 99998 !important;
+}
+.blackcart-retailer-shopbop {
+  z-index: 99999 !important;
+}
+/* End - Custom styling for specific retailers */
+.blackcart-btn-top {
+  position: fixed;
+  bottom: -10px;
+  left: calc(50% - 200px);
+  z-index: 10000;
+}
+.blackcart-cart,
+.blackcart-confirm,
+.blackcart-success {
+  right: 14px;
+  position: absolute;
+  top: 30px;
+  z-index: 10000;
+  /*height: 100%;*/
+  /*max-height: 700px;*/
+}
+.cont_tlo_body2,
+.cont_tlo_body2,
+.cont_tlo_body2 {
+  width: 100%;
+}
+/* Login Page */
+body.blackcart-login {
+  background-color: #fff;
+}
+.blackcart-popup-container {
+  width: 360px;
+  padding: 5px 20px 20px 20px;
+}
+.blackcart-popup-container .loading,
+.blackcart-popup-container .logged-in-user {
+  text-align: center;
+  padding: 20px 0 5px 0;
+}
+.blackcart-popup-container .loading p,
+.blackcart-popup-container .logged-in-user p {
+  text-align: center;
+  padding: 20px 0 5px;
+  font-weight: bold;
+}
+.blackcart-popup-container .loading button,
+.blackcart-popup-container .logged-in-user button {
+  margin-bottom: 15px;
+}
+.form-signin {
+  /* width: 350px; */
+  padding: 10px 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading {
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+  margin: 25px 0;
+}
+.form-signin .form-control {
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid #eee;
+  height: auto;
+  padding: 15px 15px 15px 0;
+  font-size: inherit;
+  box-shadow: none;
+  line-height: 22px;
+  margin: 5px 0 10px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.btn-primary {
+  padding: 12px 0;
+  background: #2a6cba;
+  color: #fff;
+  border: 0;
+  border-radius: 0;
+  text-shadow: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+.btn-primary:focus,
+.btn-primary:hover {
+  background: #215490;
+}
+.btn-cmlogin:active {
+  background: #1e4e86 !important;
+}
+.blackcart-brands-link {
+  cursor: pointer;
+}
+.blackcart-modal-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10001;
+}
+.blackcart-modal-wrapper.blackcart-walkthrough-3 {
+  z-index: 9999;
+}
+.brands-wrapper {
+  /* max-height: 450px; */
+  padding-bottom: 5px;
+  overflow-y: auto;
+  color: black;
+}
+.brands-wrapper div.column {
+  float: left;
+  margin: 10px 0;
+  text-align: center;
+  width: 160px;
+}
+.brands-wrapper div.column .brand-name {
+  display: inline-block;
+  max-width: 100px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+.brands-wrapper div.column img {
+  height: 80px;
+}
+.glyphicon-refresh-animate {
+  animation: spin 1.5s infinite linear;
+}
+
+.login-process {
+  width: 20px;
+  height: 20px;
+  line-height: 21px;
+  position: relative;
+  top: 2px;
+}
+
+.product__actions--availability-wrapper .blackcart-btn-wrapper{
+  margin-left: 10px;
+}
+
+#exp-pdp-buying-tools-container .exp-pdp-save-container .blackcart-btn-wrapper{
+  width: 200px;
+  margin-top: 15px;
+  margin-left: -40px;
+}

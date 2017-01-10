@@ -1,0 +1,33 @@
+<div class="chrome-widget">
+  <div class="cont_tlo">
+    <div class="arr"></div>
+    <div class="cont_tlo_hed">
+      <a href="https://blackcart.co/members" target="_blank"><img src="<%- chromeURL('images/sub/logo_hed.png') %>" width="100"></a>
+      <span>
+        <% if(order.OrderNo) {%>
+          Order #<%- order.OrderNo %><a href="#"><i class="fa fa-minus-circle fa-1x" id="minimize-cart"></i></a></span> 
+        <% } else {%>
+          Order #
+        <% } %>
+      </span>
+    </div>
+    <div class="cont_tlo_body" style="padding-bottom:40px;">
+      <div class="cont_tlo_scroll" style="overflow:hidden;">
+        <h1>You're All Set!</h1>
+        <div class="checkout-section checkout-success" style="padding-left:6%;padding-top:20px;"> 
+              <img src="<%- chromeURL('images/sub/cart-success.png') %>" style="float:left;width:40px;">
+              <div style="float:left;text-align:left;padding-top:10px;width:calc(100% - 40px);">
+              <strong>ORDER SUBMITTED</strong><br>
+              <span style="font-size:10px;color:#bbb;">We'll email you once it's shipped</span><br>
+              <span style="color:#ccc;line-height:95px;">DELIVERED</span><br>
+              <span style="color:#ccc;line-height:47px;">DECIDE WHAT TO KEEP</span><br>
+              <span style="color:#ccc;line-height:92px;">SCHEDULE RETURNS PICKUP</span><br>
+              </div>
+                </div>
+                <div style="clear:both;font-size:14px;font-weight:normal;padding-top:10px;">
+              Need Help? <a href="mailto:support@blackcart.co?subject=Support - Order ID <%- order.OrderNo %>">Contact Support</a>
+              </div>
+               </div>
+    </div>
+  </div>
+</div>

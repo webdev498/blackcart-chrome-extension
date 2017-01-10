@@ -1,0 +1,20 @@
+<div class="modal_smal retailer_modal">
+<div class="retailer_window_close"><a href="#"><i class="fa fa-times fa-1x" id="retailer_window_close_btn"></i></a></div>
+  <div class="moda_text retailer_text">
+      <h4 align="center">Choose A Retailer</h4>
+      <div class="row retailer_content">
+        <%_.each(brands,function(brand){ %>
+          <div class="retailer_container">
+            <a class="brand-name" href="<%- brand.URL %>" target="_blank">
+              <%- brand.BTitle %>
+            </a>
+            <br/>
+            <a href="<%- brand.URL %>" target="_blank">
+              <img src="<%- brand.BThumbnail %>"/>
+            </a>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</div>

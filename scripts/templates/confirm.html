@@ -1,0 +1,109 @@
+<div class="chrome-widget">
+  <div class="cont_tlo ">
+    <div class="blackcart-spinner confirm-spinner hidden">
+      <i class="fa fa-spinner fa-spin fa-3x"></i>
+    </div>
+    <div class="arr"></div>
+    <div class="cont_tlo_hed">
+      <a href="https://blackcart.co/members" target="_blank"><img src="<%- chromeURL('images/sub/logo_hed.png') %>" width="100"></a>
+      <span>
+        <% if(order.OrderNo) {%>
+          Order #<%- order.OrderNo %><a href="#"><i class="fa fa-minus-circle fa-1x" id="minimize-cart"></i></a></span> 
+        <% } else {%>
+          Order #
+        <% } %>
+      </span>
+    </div>
+    <div class="cont_tlo_body2">
+      <div class="scroll_body2">
+        <div class="cont_tlo_body_page">
+          <div class="cont_tlo_body_page_h">
+            <h1>Review & Confirm Order</h1>
+          </div>
+          <div class="block" style="padding-bottom:20px;">
+            <div class="cont_tlo_body_page_adress_hed">
+              <h3>
+                Shipping Address
+                <i class="fa fa-check-circle fa-1x"></i>
+              </h3>
+              <a href="#" target="_blank" id="edit-shipping-information">edit</a>
+            </div>
+            <div class="user-shipping-info">
+              <span class="span address" data-fields="Address1 Address2"><%- userInfo.Address1 || 'N/A'%> <%- userInfo.Address2 %></span>
+              <span class="span city-province" data-fields="City Province"><%- userInfo.City %> <%- userInfo.Province %></span>
+              <span class="span postal" data-fields="Postal"> <%- userInfo.Postal || 'N/A'%></span>
+            </div>
+            <div class="user-shipping-info-edit hidden">
+              <form id="user-shipping-info-form" class="form-inline">
+                <input type="text" name="Address1" class="form-control input-sm shipping-info-address1" data-validation="required" placeholder="Address Line 1" value="<%- userInfo.Address1 || ''%>" data-bind="Address1"/>
+                <input type="text" name="Address2" class="form-control input-sm shipping-info-address2" placeholder="Address Line 2" value="<%- userInfo.Address2 || '' %>" data-bind="Address2"/>
+                <br/>
+                <input type="text" name="City" class="form-control input-sm shipping-info-city" data-validation="required" placeholder="City" value="<%- userInfo.City || '' %>" data-bind="City"/>
+                <input type="text" name="Province" class="form-control input-sm shipping-info-province" data-validation="required" placeholder="Province" value="<%- userInfo.Province || '' %>" data-bind="Province"/>
+                <br/>
+                <input type="text" name="Postal" class="form-control input-sm shipping-info-postal" data-validation="required" placeholder="Postal" value="<%- userInfo.Postal || '' %>" data-bind="Postal"/>
+                <br/>
+                <button type="button" class="btn btn-xs btn-cancel-info" id="cancel-shipping-info">Cancel</button>
+                <button type="button" class="btn btn-success btn-xs btn-save-info" id="save-shipping-info">Save</button>
+              </form>
+            </div>
+          </div>
+          <div class="block clearfix" style="padding-bottom:20px;">
+            <div class="cont_tlo_body_page_adress_hed payment-info-container">
+              <% if(!userInfo.CustCD ) { %>
+              	<h3 style="color:#6D0001">
+                	Payment Method
+                	<i class="fa fa-times-circle fa-1x" style="color:#6D0001"></i>
+              	</h3>
+              	<span class="span payment-info-wrapper" style="color:#6D0001">
+                  No payment method. <a href="#" target="_blank" id="add-payment-information">Add one</a>.
+                  <br>
+                  <span class="span" style="padding-top:5px;line-height:16px;color:#555;"><em>Your credit card is never charged until after you've decided to keep your picks.</em></span>
+                </span> 
+              <% } else {%>
+                <h3>
+                  Payment Method
+                  <i class="fa fa-check-circle fa-1x"></i>
+                </h3>
+                <a href="#" target="_blank" id="edit-payment-information">edit</a>
+              <% } %>
+            </div>
+            <% if(userInfo.CustCD ) { %>
+              <span class="span payment-custcd">Credit Card: xxxx xxxx xxxx <%- userInfo.CustCD %></span>
+            <% } %>
+            <div class="user-payment-info-edit hidden">
+              <form id="user-payment-info-form" class="form-inline">
+                <input type="text" name="CustName" class="form-control input-sm payment-info-cardusername" data-validation="required" placeholder="Name on Card" data-bind="CustName"/>
+                <input type="text" name="cardNumber" class="form-control input-sm payment-info-cardnumber" data-validation="required stripe_cc" placeholder="Card Number"/>
+                <br/>
+                <input type="text" name="CustExDateM" class="form-control input-sm payment-info-expirationmonth" data-validation="required number" data-validation-allowing="range[1;12]" placeholder="MM" data-bind="CustExDateM"/>
+                <input type="text" name="CustExDateY" class="form-control input-sm payment-info-expirationyear" data-validation="required number" placeholder="YYYY" data-bind="CustExDateY"/>
+                <br/>
+                <input type="text" name="securityCode" class="form-control input-sm payment-info-securitycode" data-validation="required number" placeholder="Security Code"/>
+                <br/>
+                <button type="button" class="btn btn-xs btn-cancel-info" id="cancel-payment-info">Cancel</button>
+                <button type="button" class="btn btn-success btn-xs btn-save-info" id="save-payment-info">Save</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="block notice">
+          <img src="<%- chromeURL('images/sub/rizne.png') %>">
+          <span class="span2">
+            <strong>You will not be charged.</strong> We'll deliver <b><%- order.models.length %> 
+            <% if(order.models.length == 1) { %>
+              item
+            <% } else { %>
+              items
+            <% } %>
+            </b> to you within 7-10 business days.
+          </span> 
+        </div>
+      </div>
+      <div class="button" id="butt" style="padding:25px 0;margin:0;border-top:1px solid #ccc">
+        <a href="cart.html" id="a1" class="buttons">Go Back</a>
+        <a href="success.html" id="a2" class="buttons<%- userInfo.CustCD ? '':' disabled no-cc'%>">Submit</a>
+      </div>
+    </div>
+  </div>
+</div>

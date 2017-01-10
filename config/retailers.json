@@ -1,0 +1,1339 @@
+{
+  "retailers": [
+    {
+      "PSource":"Apache",
+      "url":"http://userver",
+      "button":{
+        "selector":".validator p a",
+        "insertionNode":".validator"
+      },
+      "content":{
+        "PThumbnail":".page_header.floating_element img",
+        "PName":".section_header:nth-child(3)",
+        "Price":"#cost"
+      }
+    },
+    {
+      "PSource":"American Eagle",
+      "url":"https://www.ae.com",
+      "customHandler":"americanEagleCustomHandler",
+      "maxRetryAttempts":3,
+      "retryInterval":2000,
+      "button":{
+        "selector":"#psp-add-to-bag",
+        "insertionNode":".psp-addtobag-btn-container"
+      },
+      "content":{
+        "PThumbnail":"#indicators > li.active:attr(background-image)",
+        "PName":".psp-product-name > span || .psp-product-name",
+        "Price":"#psp-sale-price || #psp-regular-price"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":"#quickview-add-to-bag",
+            "insertionNode":".quickview-bag-btn-container"
+          },
+          "content":{
+            "PThumbnail":"#quickview-carousel-inner .item.active > img",
+            "PName":".quickview-product-name h3",
+            "Price":"#quickview-sale-price || #quickview-regular-price || .quickview-regular-price"
+          }
+        }
+      }
+    },
+    {
+      "PSource":"Billabong",
+      "url":"http://ca.billabong.com",
+      "maxRetryAttempts":3,
+      "retryInterval":2000,
+      "customHandler":"billabongCustomHandler",
+      "button":{
+        "selector":".addtocart",
+        "insertionNode":"ul.checkout-holder:insertafter"
+      },
+      "content":{
+        "PThumbnail":"ul.product-thumbnails a.active > img",
+        "PName":".product-name",
+        "Price":".product-price"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":".fancybox-overlay-fixed .addtocart",
+            "insertionNode":".fancybox-overlay-fixed ul.checkout-holder:insertafter"
+          },
+          "content":{
+            "PThumbnail":".fancybox-overlay-fixed ul.product-thumbnails a.active > img",
+            "PName":".fancybox-overlay-fixed .product-name",
+            "Price":".fancybox-overlay-fixed .product-price"
+          }
+        }
+      }
+    },
+    {
+      "PSource":"Garage",
+      "url":"http://www.garageclothing.com/ca",
+      "customHandler":"garageCustomHandler",
+      "button":{
+        "selector":"#prodContent #prodDetailsContainer #pdpAddToCartButton .btn_addtocart",
+        "insertionNode":"#prodContent #prodDetailsContainer #pdpAddToCartButton:insertafter"
+      },
+      "content":{
+        "PThumbnail":"#prodContent #prodDetailsContainer .pdpMainImg",
+        "PName":".prodName",
+        "Price":".prodPricePDP span.withSale || .prodPricePDP"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":"#cboxContent #pdpAddToCartButton .btn_addtocart",
+            "insertionNode":"#cboxContent #pdpAddToCartButton:insertafter"
+          },
+          "content":{
+            "PThumbnail":"#cboxContent #pdpImageDisplayContainer img",
+            "PName":"#cboxContent .prodName",
+            "Price":"#cboxContent .prodPricePDP span.withSale || #cboxContent .prodPricePDP"
+          }
+        }
+      }
+    },
+    {
+      "PSource":"Dynamite",
+      "url":"http://www.dynamiteclothing.com/ca",
+      "customHandler":"garageCustomHandler",
+      "button":{
+        "selector":"#prodDetailsContainer #pdpAddToCartButton .btn_addtocart",
+        "insertionNode":"#prodDetailsContainer #pdpAddToCartButton:insertafter"
+      },
+      "content":{
+        "PThumbnail":".addViews > li:first-child > a >img",
+        "PName":".prodName",
+        "Price":".prodPricePDP span.withSale || .prodPricePDP"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":"#cboxContent #pdpAddToCartButton .btn_addtocart",
+            "insertionNode":"#cboxContent #pdpAddToCartButton:insertafter"
+          },
+          "content":{
+            "PThumbnail":"#cboxContent .addViews > li:first-child > a >img",
+            "PName":"#cboxContent .prodName",
+            "Price":"#cboxContent .prodPricePDP span.withSale || #cboxContent .prodPricePDP"
+          }
+        }
+      }
+    },
+    {
+      "PSource":"Nike",
+      "url":"http://store.nike.com",
+      "customHandler":"nikeCustomHandler",
+      "retryInterval": 1000,
+      "maxRetryAttempts":3,
+      "button":{
+        "selector":".add-to-cart",
+        "insertionNode":".add-to-cart:insertafter"
+      },
+      "content":{
+        "PThumbnail":".exp-pdp-alt-images-carousel li.exp-pdp-active > img || .exp-id-imagegrid__items.js-imageGridItems img:nth(1)",
+        "PName":".exp-product-title || .exp-pdp-title__main-title",
+        "Price":".exp-pdp-product-price .exp-pdp-local-price"
+      }
+    },
+    {
+      "PSource":"Foot Locker",
+      "url":"http://www.footlocker.ca",
+      "customHandler":"footLockerCustomHandler",
+      "button":{
+        "selector":"input[name=pdp_addtocart]",
+        "insertionNode":".add_to_cart:insertafter"
+      },
+      "content":{
+        "PThumbnail":"#s7ZoomViewerViewer_swatches .s7thumb[state=selected]:attr(background-image)",
+        "PName":".title h1",
+        "Price":".sale span.value || .regular_price span.value"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":"#pdp_addToCartButton",
+            "insertionNode":"#quickviewSubmitWrapper"
+          },
+          "content":{
+            "PThumbnail":"#quickview #quickviewPDP a#QVproductImage > img",
+            "PName":"#quickview #quickviewPDP .rightColumn > h1 > a",
+            "Price":"#quickview #quickviewPDP .quickview_salePrice || #quickview #quickviewPDP .QVcurrent_price"
+          }
+        }
+      }
+    },
+    {
+      "PSource":"Hollister",
+      "url":"https://www.hollisterco.ca",
+      "customHandler":"hollisterCustomHandler",
+      "retryInterval":1500,
+      "maxRetryAttempts":3,
+      "button":{
+        "selector":".product__actions--availability",
+        "insertionNode":".product__actions--availability-wrapper"
+      },
+      "content":{
+        "PThumbnail":".bx-wrapper .bx-pager-link.active > img || .product-thumbnails__wrapper ul li a.active > img",
+        "PName":".product__description .product__description--name || .product-page-info__title .product-page-title",
+        "Price":".product-price-v2__price--offer || .product-price-v2__price--list"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":"#simplemodal-container .product__actions--add-to-bag",
+            "insertionNode":"#simplemodal-container .product__actions"
+          },
+          "content":{
+            "PThumbnail":"#simplemodal-container .bx-wrapper .bx-pager-link.active > img",
+            "PName":"#simplemodal-container .product__description .product__description--name",
+            "Price":"#simplemodal-container .product-price-v2__price--offer || #simplemodal-container .product-price-v2__price--list"
+          }
+        }
+      }
+    },
+    {
+      "PSource":"Jack & Jones",
+      "url":"http://www.jack-jones.ca",
+      "customHandler":"jackjonesCustomHandler",
+      "retryInterval":2500,
+      "maxRetryAttempts":3,
+      "button":{
+        "selector":".page-wrap .product-view .add-to-cart",
+        "insertionNode":".page-wrap .product-options-bottom"
+      },
+      "content":{
+        "PThumbnail":".page-wrap .zoomPad:first-child img:nth(1)",
+        "PName":".product-name > h1",
+        "Price":".product-shop .price-box .special-price .price || .product-shop .price-box .regular-price .price"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":"#quick-popup .add-to-cart",
+            "insertionNode":"#quick-popup .product-options-bottom"
+          },
+          "content":{
+            "PThumbnail":"#quick-popup .zoomPad img:nth(1)",
+            "PName":"#quick-popup .product-name > h1 > a || #quick-popup .product-name > h1",
+            "Price":"#quick-popup .special-price .price || #quick-popup .regular-price .price"
+          }
+        }
+      }
+    },
+    {
+      "PSource":"Marciano",
+      "url":"http://guessbymarciano.guess.ca",
+      "customHandler":"marcianoCustomHandler",
+      "retryInterval":2500,
+      "maxRetryAttempts":3,
+      "button":{
+        "selector":"#productDetails a.addToCart",
+        "insertionNode":"#productDetails .productInformation form:insertafter"
+      },
+      "content":{
+        "PThumbnail":"#productDetails #mySwatches div[state=selected]:attr(background-image)",
+        "PName":"#productDetails .rightdetails > h1",
+        "Price":"#productDetails .price .offerSale .promo .priceVal || #productDetails .price .offerSale .regular .priceVal || #productDetails .price .regPrice .original .priceVal"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":"#quickViewBox a.addToCart",
+            "insertionNode":"#quickViewBox .productInfo .buttons:insertafter"
+          },
+          "content":{
+            "PThumbnail":"#quickViewBox .productImages .swiper-slide-active img",
+            "PName":"#quickViewBox .productDetails > h1",
+            "Price":"#quickViewBox .productDetails .price .offerSale .promo .priceVal || #quickViewBox .productDetails .price .offerSale .regular .priceVal || #quickViewBox  .productDetails .price .regPrice .original .priceVal || #quickViewBox .productDetails .price .promo .priceVal"
+          }
+        }
+      }
+    },
+    {
+      "PSource":"Guess",
+      "url":"https://www.guess.ca",
+      "useStartsWith": true,
+      "customHandler":"marcianoCustomHandler",
+      "retryInterval":2500,
+      "maxRetryAttempts":3,
+      "button":{
+        "selector":"#productDetails a.addToCart",
+        "insertionNode":"#productDetails .productInformation form:insertafter"
+      },
+      "content":{
+        "PThumbnail":"#productDetails #mySwatches div[state=selected]:attr(background-image)",
+        "PName":"#productDetails .rightdetails > h1",
+        "Price":"#productDetails .price .offer .promo .priceVal || #productDetails .price .offer .regular .priceVal || #productDetails .price .offerSale .promo .priceVal || #productDetails .price .offerSale .regular .priceVal || #productDetails .price .regPrice .original .priceVal"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":"#quickViewBox a.addToCart",
+            "insertionNode":"#quickViewBox .productInfo .buttons:insertafter"
+          },
+          "content":{
+            "PThumbnail":"#quickViewBox .productImages .swiper-slide-active img",
+            "PName":"#quickViewBox .productDetails > h1",
+            "Price":"#quickViewBox .productDetails .price .offerSale .promo .priceVal || #quickViewBox .productDetails .price .offerSale .regular .priceVal || #quickViewBox .productDetails .price .regPrice .original .priceVal || #quickViewBox .productDetails .price .promo .priceVal"
+          }
+        }
+      }
+    },
+    {
+      "PSource":"Melanie Lyne",
+      "url":"http://www.melanielyne.com",
+      "customHandler":"melanieLyneCustomHandler",
+      "button":{
+        "selector":"#add-to-cart",
+        "insertionNode":".product-actions"
+      },
+      "content":{
+        "PThumbnail":"#thumbnails li.thumb.selected > a >img || .product-main-info .more-views > ul > li:first-child > a > img || .product-primary-image > a >img",
+        "PName":".product-detail > h1.product-name",
+        "Price":".product-essential .price-box .special-price .price || .product-essential .price-box .special-price || .product-essential .price-box .regular-price .price || .product-essential .price-box .regular-price || .product-price .price-sales"
+      },
+      "alternates":{
+        "popup":{
+          "iframeSelector":"#quickview-iframe",
+          "button":{
+            "selector":".btn-add-to-cart .button",
+            "insertionNode":".add-to-cart"
+          },
+          "content":{
+            "PThumbnail":"ul.slides > li.flex-active-slide > a > img",
+            "PName":".product-detail > h1.product-name",
+            "Price":".special-price .price || .special-price || .regular-price .price || .regular-price"
+          }
+        }
+      }
+    },
+    {
+      "PSource":"Under Armour",
+      "url":"https://www.underarmour.com/en-ca",
+      "customHandler":"underArmourCustomHandler",
+      "button":{
+        "selector":".addtocart-btn",
+        "insertionNode":".buypanel_addtocart"
+      },
+      "content":{
+        "PThumbnail":".product-img-thumbnails a.product-thumb.selected > img",
+        "PName":".buypanel_producttitle > span",
+        "Price":".buypanel_productprice-value > span || .buypanel_productprice-value"
+      },
+      "alternates":{
+        "popup":{
+          "iframeSelector":".modal-iframe",
+          "button":{
+            "selector":".addtocart-btn",
+            "insertionNode":".buypanel_addtocart"
+          },
+          "content":{
+            "PThumbnail":".product-img-thumbnails a.product-thumb.selected > img",
+            "PName":"#container-quickview .quickview-detail .buypanel_producttitle > span",
+            "Price":"#container-quickview .quickview-detail .buypanel_productprice-value > span"
+          }
+        }
+      }
+    },
+    {
+      "PSource":"RW&CO",
+      "url":"http://www.rw-co.com/",
+      "customHandler":"rwcoCustomHandler",
+      "retryInterval":1500,
+      "maxRetryAttempts":3,
+      "button":{
+        "selector":"#add-to-cart",
+        "insertionNode":"#product-content"
+      },
+      "content":{
+        "PThumbnail":"#thumbnails li.thumb.selected > a > img",
+        "PName":"#pdpMain h1.product-name",
+        "Price":"#pdpMain .markdown .priceMarkdown || #pdpMain .priceRegular"
+      },
+      "alternates":{
+        "popup":{
+           "button":{
+            "selector":"#QuickViewDialog #add-to-cart",
+            "insertionNode":"#QuickViewDialog #product-content"
+          },
+          "content":{
+            "PThumbnail":"#QuickViewDialog #thumbnails li.thumb.selected > a > img",
+            "PName":"#QuickViewDialog #pdpMain h1.product-name",
+            "Price":"#QuickViewDialog #pdpMain .markdown .priceMarkdown || #pdpMain .priceRegular"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "Topshop",
+      "url": "http://www.thebay.com/webapp/wcs/stores/servlet/en/thebay/brand/TOPSHOP/womens-apparel",
+      "customHandler":"theBayCustomHandler",
+      "button":{
+        "selector":"#addtobag",
+        "insertionNode":"#inventoryCheck"
+      },
+      "content":{
+        "PThumbnail":".pic-container ul#thumb1 li:first-child > img:nth-child(2) || #lupaImgflyzoom || #flyzoom",
+        "PName":"h2.detial",
+        "Price":"#price"
+      },
+      "alternates":{
+        "popup":{
+          "iframeSelector":"#quick_view_iframe",
+          "button":{
+            "selector":"#addtobag",
+            "insertionNode":"#inventoryCheck"
+          },
+          "content":{
+            "PThumbnail":".pic-container ul#thumb1 li:first-child > img:nth-child(2) || #lupaImgflyzoom || #flyzoom",
+            "PName":"h3.detial || h2.detial",
+            "Price":"#offerPrice || #listPrice || #price"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "Topman",
+      "url": "http://www.thebay.com/webapp/wcs/stores/servlet/en/thebay/mens",
+      "customHandler":"theBayCustomHandler",
+      "button":{
+        "selector":"#addtobag",
+        "insertionNode":"#inventoryCheck"
+      },
+      "content":{
+        "PThumbnail":".pic-container ul#thumb1 li:first-child > img:nth-child(2) || #lupaImgflyzoom || #flyzoom",
+        "PName":"h2.detial",
+        "Price":"#offerPrice || #listPrice || #price"
+      },
+      "alternates":{
+        "popup":{
+          "iframeSelector":"#quick_view_iframe",
+          "button":{
+            "selector":"#addtobag",
+            "insertionNode":"#inventoryCheck"
+          },
+          "content":{
+            "PThumbnail":".pic-container ul#thumb1 li:first-child > img:nth-child(2) || #lupaImgflyzoom || #flyzoom",
+            "PName":"h3.detial || h2.detial",
+            "Price":"#offerPrice || #listPrice || #price"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "The Bay",
+      "url": "http://www.thebay.com/",
+      "customHandler":"theBayCustomHandler",
+      "button":{
+        "selector":"#addtobag",
+        "insertionNode":"#inventoryCheck || .woaicss:prepend"
+      },
+      "content":{
+        "PThumbnail":".pic-container ul#thumb1 li:first-child > img:nth-child(2) || #lupaImgflyzoom || #flyzoom",
+        "PName":"h2.detial",
+        "Price":"#offerPrice || #listPrice || #price"
+      },
+      "alternates":{
+        "popup":{
+          "iframeSelector":"#quick_view_iframe",
+          "button":{
+            "selector":"#addtobag",
+            "insertionNode":"#inventoryCheck || .woaicss:prepend"
+          },
+          "content":{
+            "PThumbnail":".pic-container ul#thumb1 li:first-child > img:nth-child(2) || #lupaImgflyzoom || #flyzoom",
+            "PName":"h3.detial || h2.detial",
+            "Price":"#offerPrice || #listPrice || #price"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "Simons",
+      "url": "http://www.simons.ca/",
+      "isBG": false,
+      "root":"#product",
+      "customHandler":"simonsCustomHandler",
+      "button":{
+        "selector":"#product_right .actions .greenButton.cart_button",
+        "insertionNode":".actions"
+      },
+      "content":{
+        "PThumbnail":".alternate_images span.alt_active > a > img || #imageZoomer .zoomSmall",
+        "PName":".productTitle > span || .productTitle",
+        "Price":".salePrice[itemprop=lowPrice] || .salePrice"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":"#quickView .simons_button.green_large_button.cart_button",
+            "insertionNode":"#quickView .actions"
+          },
+          "content":{
+            "PThumbnail":"#quickView .alternate_images span.alt_active > a > img || #quickView #imageZoomer .zoomSmall",
+            "PName":"#quickView .productTitle > span || #quickView .productTitle",
+            "Price":"#quickView .salePrice[itemprop=lowPrice]"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "Bench",
+      "url": "http://bench.ca/",
+      "customHandler":"benchCustomHandler",
+      "retryInterval":1500,
+      "maxRetryAttempts":3,
+      "button":{
+        "selector":"li.btn-add-to-cart button",
+        "insertionNode":"div.product-options-bottom"
+      },
+      "content":{
+        "PThumbnail":"#productCarousel > ul > li.active > a > img || .product-img-box > a > img",
+        "PName":".product-name > h1 || .product-name",
+        "Price":"p.price .bogo-price span.price || p.price span.final-price span || p.price .special-price || .price-box .regular-price span.price"
+      },
+      "alternates":{
+        "popup":{
+          "iframeSelector":"#quickview-iframe",
+           "button":{
+            "selector":".add-to-cart",
+            "insertionNode":"div.product-options-bottom"
+          },
+          "content":{
+            "PThumbnail":".product-img-box ul li:first-child > a > img",
+            "PName":".product-name > h1 || .product-name",
+            "Price":"p.price .bogo-price span.price || p.price span.final-price span || p.price .special-price || .price-box .regular-price span.price"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "Lululemon",
+      "url": "http://shop.lululemon.com/",
+      "button":{
+        "selector":"#btn_add_to_bag",
+        "insertionNode":"#pdp-form .section-button"
+      },
+      "content":{
+        "PThumbnail":"#pdp-media-section li:first-child picture img:attr(srcset)",
+        "PName":"#pdp-product-attributes .product-description h1",
+        "Price":"#pdp-product-attributes .product-description .price-fixed"
+      }
+    },
+    {
+      "PSource": "Live Out There",
+      "url": "https://www.liveoutthere.com/",
+      "button":{
+        "selector":"button#product-add-to-cart",
+        "insertionNode":"div.addtocart.pdp-add-to-cart"
+      },
+      "content":{
+        "PThumbnail":".pdp-thumbnails li.color-option.selected > a > img || .pdp-thumbnails li.color-option:first-child > a > img || .pdp-product-img-box img:nth(1)",
+        "PName":"h1.pdp-h1 strong",
+        "Price":".special-price:nth(1) || .old-price:nth(1) || .regular-price:nth(1)"
+      }
+    },
+    {
+      "PSource": "33-Off",
+      "url": "http://www.33-off.com/",
+      "button":{
+        "selector":"div.AddCartButton",
+        "insertionNode":"div.productAddToCartRight"
+      },
+      "content":{
+        "PThumbnail":".ProductThumbImage > a > .zoomPad > img",
+        "PName":".ProductMain h1",
+        "Price":".ProductPrice.VariationProductPrice"
+      }
+    },
+    {
+      "PSource": "New Balance",
+      "url": "http://www.newbalance.ca/",
+      "customHandler":"newBalanceCustomHandler",
+      "retryInterval":1500,
+      "maxRetryAttempts":3,
+      "button":{
+        "selector":".add-to-cart",
+        "insertionNode":".button-container:insertafter"
+      },
+      "content":{
+        "PThumbnail":".product-image.has-image img || .swiper-slide img",
+        "PName":".product-name a || .product-name",
+        "Price":".product-pricing .price"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":".quickview-container .add-to-cart",
+            "insertionNode":".quickview-container .button-container:insertafter"
+          },
+          "content":{
+            "PThumbnail":".quickview-container .product-image.has-image img || .quickview-container .swiper-slide img",
+            "PName":".quickview-container .product-name a || .quickview-container .product-name",
+            "Price":".quickview-container .product-pricing .price"
+          }
+        },
+        "multiple":{
+          "button":{
+            "selector":"#cart-actions ._add-to-cart-btn",
+            "insertionNode":"#cart-actions"
+          },
+          "content":{
+            "PThumbnail":"#main-images > div img:first-child",
+            "PName":".product-card header > h1",
+            "Price":".product-card .price._product-price || .product-card .price._product-price"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "The North Face",
+      "url": "https://www.thenorthface.com/",
+      "button":{
+        "selector":"#buttonAddToBag",
+        "insertionNode":"#ecom-product-actions"
+      },
+      "content":{
+        "PThumbnail":".s7-img:first-child",
+        "PName":"h1.product-content-info-name.product-info-js",
+        "Price":".offer-price || .current-price"
+      }
+    },
+    {
+      "PSource": "Running Room",
+      "url": "http://www.runningroom.com",
+      "customHandler":"runningRoomCustomHandler",
+      "retryInterval":1500,
+      "maxRetryAttempts":3,
+      "button":{
+        "selector":".add-to-cart button",
+        "insertionNode":".add-to-cart"
+      },
+      "content":{
+        "PThumbnail":"#product-image img",
+        "PName":".item-title h1 || h1.page_title",
+        "Price":".price-box .special-price span.price || .price-box .regular-price span.price || .price-box span.label span.configurable-price-from-label"
+      },
+      "alternates":{
+        "popup":{
+          "iframeSelector":"#sb-player",
+          "button":{
+            "selector":".add-to-cart-button",
+            "insertionNode":".quickview-addtocard"
+          },
+          "content":{
+            "PThumbnail":"#product-image > a > img",
+            "PName":".main-container .title",
+            "Price":".price-box .special-price span.price  || .price-box .regular-price span.price || .price-box span.label span.configurable-price-from-label"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "Sport Chek",
+      "url": "https://www.sportchek.ca",
+      "button":{
+        "selector":".add-cart",
+        "insertionNode":".product-detail__options"
+      },
+      "content":{
+        "PThumbnail":"li.product-swatches__item.product-swatches__item_active > a > img.product-swatches__item-img",
+        "PName":"h1.global-page-header__title",
+        "Price":".product-detail__price-text"
+      }
+    },
+    {
+      "PSource": "Roots",
+      "url": "https://www.roots.com/ca/en/",
+      "button":{
+        "selector":"#add-to-cart",
+        "insertionNode":".addcartsection"
+      },
+      "content":{
+        "PThumbnail":"li.thumb.selected > a > img.productthumbnail",
+        "PName":"h1.product-name",
+        "Price":".product-price .price-sales || .product-price .price-regular"
+      }
+    },
+    {
+      "PSource": "Aldo Shoes",
+      "url": "http://www.aldoshoes.com/ca/en",
+      "button":{
+        "selector":".cartButtons button",
+        "insertionNode":".supportlinksDiv:insertbefore",
+        "cls":"aldoshoes-btn"
+      },
+      "content":{
+        "PThumbnail":"#PThumbnailLink img || #imageLink img",
+        "PName":".product-detail-column.right h1",
+        "Price":"#sizeAndAddToCart .attributes .attribute-swatches p.image.active + p.title + p.price-container span.price a span.price:nth(2) || #sizeAndAddToCart .attributes .attribute-swatches p.image.active + p.title + p.price-container span.price a span.price"
+      }
+    },
+    {
+      "PSource": "Browns Shoes",
+      "url": "http://www.brownsshoes.com/",
+      "customHandler":"brownShoesHandler",
+      "retryInterval":1500,
+      "maxRetryAttempts":3,
+      "button":{
+        "selector":"#add-to-cart",
+        "insertionNode":"#product-detail-slot:prepend"
+      },
+      "content":{
+        "PThumbnail":"#thumbnails .thumb.selected a img",
+        "PName":".product-detail h2.product-name || .product-detail > a:attr(title)",
+        "Price":"#product-content > .product-price > .price-sales || #product-content > .product-price > .price-standard"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":".quickview #add-to-cart",
+            "insertionNode":".quickview .product-add-to-cart"
+          },
+          "content":{
+            "PThumbnail":".quickview #thumbnails .thumb.selected a img",
+            "PName":".quickview .product-detail h2.product-name || .quickview .product-detail > a:attr(title)",
+            "Price":".quickview #product-content > .product-price > .price-sales || .quickview #product-content > .product-price > .price-standard"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "Call It Spring",
+      "url": "http://www.callitspring.com/ca/en",
+      "delay":1500,
+      "button":{
+        "selector":".cartButtons > button",
+        "insertionNode":".product-detail-column.right"
+      },
+      "content":{
+        "PThumbnail":".product-detail-column.left span.thumb > a >img",
+        "PName":".product-detail-column.right > h1",
+        "Price":"#sizeAndAddToCart div.attribute-swatches p.image.active + p.title + .price-container > span.price > a > span.price:nth(0) || .price-container > span.price > a > span.price"
+      }
+    },
+    {
+      "PSource": "Town Shoes",
+      "url": "http://ts.townshoes.ca/store/",
+      "customHandler":"theShoeCompanyCustomHandler",
+      "retryInterval":1500,
+      "maxRetryAttempts":3,
+      "button":{
+        "selector":"#addToCartButton",
+        "insertionNode":"#addToCartForm"
+      },
+      "content":{
+        "PThumbnail":".product-image-small div.product-carousel > div.cycle-carousel-wrap > div.cycle-slide-active > img",
+        "PName":".productDetailsPanel .productDescription h1:attr(text)",
+        "Price":".productDetailsPanel .productDescription .big-price > span || .productDetailsPanel .productDescription .red-price > span"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":"#quickviewLightbox #viewDetails",
+            "insertionNode":"#quickviewLightbox #viewDetails:insertbefore"
+          },
+          "content":{
+            "PThumbnail":"#quickviewLightbox .product-image-small > div.product-carousel > div.cycle-carousel-wrap > div.cycle-slide-active > img || #quickviewLightbox .product-image-panel .product-image-large > div.product-carousel > div.cycle-slide-active > img:nth(0)",
+            "PName":"#quickviewLightbox .productDescription a > h1",
+            "Price":"#quickviewLightbox .productDescription .big-price > .red-price > span || #quickviewLightbox .productDescription .big-price > span || #quickviewLightbox .productDetailsPanel .productDescription .red-price > span"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "The Shoe Company",
+      "url": "http://theshoecompany.townshoes.ca/",
+      "customHandler":"theShoeCompanyCustomHandler",
+      "retryInterval":1500,
+      "maxRetryAttempts":3,
+      "button":{
+        "selector":"#addToCartButton",
+        "insertionNode":"#addToCartForm"
+      },
+      "content":{
+        "PThumbnail":".product-image-small > div.product-carousel > div.cycle-carousel-wrap > div.cycle-slide-active > img",
+        "PName":".productDetailsPanel .productDescription h2:nth-child(4)",
+        "Price":".productDetailsPanel .productDescription .big-price > span || .productDetailsPanel .productDescription .red-price > span"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":"#quickviewLightbox #viewDetails",
+            "insertionNode":"#quickviewLightbox #viewDetails:insertbefore"
+          },
+          "content":{
+            "PThumbnail":"#quickviewLightbox .product-image-small > div.product-carousel > div.cycle-carousel-wrap > div.cycle-slide-active > img",
+            "PName":"#quickviewLightbox .productDescription a > h1",
+            "Price":"#quickviewLightbox .productDescription .big-price > .red-price > span || #quickviewLightbox .productDescription .big-price > span || #quickviewLightbox .productDetailsPanel .productDescription .red-price > span"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "Shoe Me",
+      "url": "http://www.shoeme.ca/",
+      "button":{
+        "selector":"input#add",
+        "insertionNode":".add-wrapper"
+      },
+      "content":{
+        "PThumbnail":".product-photo-thumbs > .list-inline > li > a > img || #product-photo-featured",
+        "PName":".product-title .product-name",
+        "Price":".product-title .product-price"
+      }
+    },
+    {
+      "PSource": "Keen",
+      "url": "http://www.keenfootwear.com/en-ca/",
+      "button":{
+        "selector":".buyNowButton",
+        "insertionNode":".detail-left.right > .product_option:prepend"
+      },
+      "content":{
+        "PThumbnail":"#product-viewer-colors > li.product-viewer-color-selected img || #product-viewer-colors > li:first-child img || #product-viewer-current-image || #clothingZoomContainer > img || .clothingView > a:first-child > img",
+        "PName":"h1.productDetailProductName span || h1.productDetailProductName",
+        "Price":"span.price span[itemprop=price]"
+      }
+    },
+    {
+      "PSource": "Quarks",
+      "url": "https://www.quarkshoes.com",
+      "button":{
+        "selector":".add-to-cart button.btn.btn-primary[type=submit]",
+        "insertionNode":".add-to-cart > .variations"
+      },
+      "content":{
+        "PThumbnail":".content-inner .images > .large > a > img || .content-inner .thumbnails li:first-child > div > a > img",
+        "PName":".content-inner .product-title h1[itemprop=name]",
+        "Price":"div.price > .discounted span.price || div.price > span.list"
+      }
+    },
+    {
+      "PSource": "Aritzia",
+      "url": "http://aritzia.com/en/",
+      "button":{
+        "selector":"#add-to-cart",
+        "insertionNode":"div.pdp-help:prepend"
+      },
+      "content":{
+        "PThumbnail":".pdp-images > .pdp-image-item:first-child > .products-item a.pdp-image img",
+        "PName":"h1.pdp-product-name",
+        "Price":".pdp-product-price > .product-price > .price-sales > span || .pdp-product-price > .product-price > .price-default > span"
+      }
+    },
+    {
+      "PSource": "Boohoo",
+      "url": "http://www.boohoo.com/",
+      "button":{
+        "selector":"button.success.js-addproduct",
+        "insertionNode":".prod-detail-buttons .box-body"
+      },
+      "content":{
+        "PThumbnail":"#productdetail-altview > li:first-child a img",
+        "PName":".details-column > h1[itemprop=name]",
+        "Price":"#price"
+      }
+    },
+    {
+      "PSource": "Ego Closet",
+      "url": "http://www.egocloset.com/",
+      "button":{
+        "selector":".product-info > form > .product-col-2 > .buttons-container",
+        "insertionNode":".product-info > form > .product-col-2"
+      },
+      "content":{
+        "PThumbnail":".product-thumbnails a:first-child > img",
+        "PName":".mainbox-title",
+        "Price":".price-num:last-child"
+      }
+    },
+    {
+      "PSource": "Famedrop",
+      "url": "https://famedrop.com/",
+      "button":{
+        "selector":"button.single_add_to_cart_button[type=submit]",
+        "insertionNode":".single_variation_wrap"
+      },
+      "content":{
+        "PThumbnail":".swiper-wrapper .swiper-slide-active > div img:last-child:nth(2)",
+        "PName":".product-title:nth(1)",
+        "Price":".product-price > .sale-price > .amount:nth(1) || .product-price > .amount:nth(1)"
+      }
+    },
+    {
+      "PSource": "Jean Machine",
+      "url": "http://jeanmachine.com/",
+      "button":{
+        "selector":".btn-addtocart.add-to-bag",
+        "insertionNode":".add-to-cart-wrap"
+      },
+      "content":{
+        "PThumbnail":".pager > div > ul > li.active > a > img || .product-image",
+        "PName":".product-info > .product-name:nth(1)",
+        "Price":".product-info .price-sale:nth(2) || .product-info .price:nth(2)"
+      }
+    },
+    {
+      "PSource": "Shopbop",
+      "url": "https://www.shopbop.com",
+      "prependToBody":true,
+      "customHandler":"shopBopCustomHandler",
+      "retryInterval":1500,
+      "maxRetryAttempts":3,
+      "button":{
+        "selector":"#buyButton",
+        "insertionNode":".add-to-cart-container"
+      },
+      "content":{
+        "PThumbnail":"#productImage",
+        "PName":".product-title",
+        "Price":"#productPrices .priceBlock .salePrice || #productPrices .priceBlock"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":".modal-body #qsBuyButton",
+            "insertionNode":".modal-body #buttonDiv:insertafter"
+          },
+          "content":{
+            "PThumbnail":".modal-body #productDetailMainImage > img",
+            "PName":".modal-body #productTitle",
+            "Price":".modal-body #productPrices .priceBlock .salePrice || .modal-body #productPrices .priceBlock"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "Shoptiques",
+      "url": "http://www.shoptiques.com",
+      "customHandler":"shopTiquesCustomHandler",
+      "retryInterval":1500,
+      "maxRetryAttempts":3,
+      "prependToBody":true,
+      "button":{
+        "selector":"#add-to-cart",
+        "insertionNode":"#product-detail #variant-container"
+      },
+      "content":{
+        "PThumbnail":".controls.btn-group-color > a.active:attr(data-deferred-small) || .image-gallery ul#image-carousel li:first-child > a > span > img || .main-image > #wrap > a > img",
+        "PName":"#product-detail .product-name > h1:nth(1)",
+        "Price":"#product-price > span.display-price span.sale || #product-price span"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":".quick-buy.selected.focused .quick-buy-add",
+            "insertionNode":".quick-buy.selected.focused .quick-buy-add:insertafter"
+          },
+          "content":{
+            "PThumbnail":".product.with-swatches.listproduct.active_product .productImageHolder > a > img:nth(2) || .products-list__product.online.active_product a figure img:nth(1)",
+            "PName":".product.with-swatches.listproduct.active_product .name-price .name a || .products-list__product.online.active_product .products-list__product__description header a",
+            "Price":".product.with-swatches.listproduct.active_product .name-price .price span || .products-list__product.online.active_product .products-list__product__description div:nth(1)"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "Urban Outfitters",
+      "retryInterval":1500,
+      "maxRetryAttempts":5,
+      "customHandler":"urbanOutfittersCustomHandler",
+      "url": "http://www.urbanoutfitters.com/ca/en",
+      "button":{
+        "selector":"#product-container .product-details .action-buttons button.bag-button",
+        "insertionNode":"#product-container .product-details .action-buttons"
+      },
+      "content":{
+        "PThumbnail":".product-images > span:first-child > img",
+        "PName":".pdp-desktop-titles h1",
+        "Price":".mainPrice"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":".qv-holder.pdp-content .product-details .action-buttons button.bag-button",
+            "insertionNode":".qv-holder.pdp-content .product-details .action-buttons:insertafter"
+          },
+          "content":{
+            "PThumbnail":".qv-holder.pdp-content span.expanded-image.top-image img",
+            "PName":".qv-holder.pdp-content .pd-inner h1 a",
+            "Price":".qv-holder.pdp-content .pd-inner .product-price span.mainPrice || .qv-holder.pdp-content .pd-inner .product-price span.salePrice"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "Alternative Apparel",
+      "url": "https://www.alternativeapparel.com",
+      "button":{
+        "selector":"button.button.btn-cart[type=button]",
+        "insertionNode":"div.add-to-cart"
+      },
+      "content":{
+        "PThumbnail":".carousel__item--pdp:nth-child(2) > img",
+        "PName":".product-shop .product-name > h1",
+        "Price":".product-shop .price-box .special-price span.price || .product-shop .price-box .regular-price span.price"
+      }
+    },
+    {
+      "PSource": "Banana Republic",
+      "url": "http://bananarepublic.gapcanada.ca/",
+      "polymorphicOn":"button",
+      "buttonList":["#addToBagBtn","#addToBag"],
+      "defs":{
+        "#addToBag":{
+          "button":{
+            "selector":"#addToBag",
+            "insertionNode":".buy-box--addtobag"
+          },
+          "content":{
+            "PThumbnail":"#pagination-simplebar .pagination--list li.active > a > img || #pagination-simplebar .pagination--list li > a > img",
+            "PName":".product-title",
+            "Price":".buy-box--messaging_unit-promotion:nth(1) || .product-price"
+          }
+        },
+        "#addToBagBtn":{
+          "button":{
+            "selector":"#addToBagBtn",
+            "insertionNode":"#addToBagContent"
+          },
+          "content":{
+            "PThumbnail":"#product_image",
+            "PName":"#productNameText .productName",
+            "Price":"#priceText > span.salePrice || #priceText"
+          }
+        }
+      }
+      
+    },
+    {
+      "PSource": "Club Monaco",
+      "url": "http://www.clubmonaco.ca/",
+      "retryInterval":1500,
+      "maxRetryAttempts":3,
+      "customHandler":"clubMonacoCustomHandler",
+      "button":{
+        "selector":"#add-to-cart",
+        "insertionNode":"#add-to-cart-container"
+      },
+      "content":{
+        "PThumbnail":"#alternate-images li.active > a > img || #alternate-images > li > a > img || #mainProductImage",
+        "PName":"#product-information .product-title",
+        "Price":"#product-information .money .sale-price || #product-information .money span"
+      },
+      "alternates":{
+        "popup":{
+          "iframeSelector":"#fancybox-frame",
+          "button":{
+            "selector":"#product #add-to-cart",
+            "insertionNode":"#product #add-to-cart-container"
+          },
+          "content":{
+            "PThumbnail":"#alternate-images li.active > a > img || #alternate-images > li > a > img || #mainProductImage",
+            "PName":"#product-information .product-title a",
+            "Price":"#product-information .money .sale-price || #product-information .money span"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "Club Monaco",
+      "url": "http://clubmonaco.borderfree.com/",
+      "retryInterval":1500,
+      "maxRetryAttempts":3,
+      "customHandler":"clubMonacoCustomHandler",
+      "button":{
+        "selector":"#add-to-cart",
+        "insertionNode":"#add-to-cart-container"
+      },
+      "content":{
+        "PThumbnail":"#alternate-images li.active > a > img || #alternate-images > li > a > img || #mainProductImage",
+        "PName":"#product-information .product-title",
+        "Price":"#product-information .money .sale-price || #product-information .money span"
+      },
+      "alternates":{
+        "popup":{
+          "iframeSelector":"#fancybox-frame",
+          "button":{
+            "selector":"#product #add-to-cart",
+            "insertionNode":"#product #add-to-cart-container"
+          },
+          "content":{
+            "PThumbnail":"#alternate-images li.active > a > img || #alternate-images > li > a > img || #mainProductImage",
+            "PName":"#product-information .product-title a",
+            "Price":"#product-information .money .sale-price || #product-information .money span"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "Forever 21",
+      "url": "http://www.forever21.com/shop/ca/en",
+      "customHandler":"forever21Handler",
+      "retryInterval":1500,
+      "maxRetryAttempts":3,
+      "button":{
+        "selector":".pdp_wrapper #addtobag",
+        "insertionNode":".pdp_wrapper .btn_addtobag:insertafter"
+      },
+      "content":{
+        "PThumbnail":".column_wrapper .ItemImage.Main",
+        "PName":".pdp_title .item_name_p",
+        "Price":".pdp_title .price_p .price_c.sale || .pdp_title .price_p .price_c.original || .pdp_title .price_p .unitprice || .pdp_title .price_p > span > span"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":".jconfirm-box .content #addtobag",
+            "insertionNode":".jconfirm-box .content .btn_addtobag:insertafter"
+          },
+          "content":{
+            "PThumbnail":".jconfirm-box .content #productImage",
+            "PName":".jconfirm-box .content .pdp_title .item_name_p",
+            "Price":".jconfirm-box .content .pdp_title .price_p .price_c.sale || .jconfirm-box .content .pdp_title .price_p .price_c.original || .jconfirm-box .content .pdp_title .price_p .unitprice || .jconfirm-box .content .pdp_title .price_p > span > span"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "Old Navy",
+      "url": "http://oldnavy.gapcanada.ca/",
+      "polymorphicOn":"button",
+      "buttonList":["#addToBagBtn","#addToBag"],
+      "defs":{
+        "#addToBag":{
+          "button":{
+            "selector":"#addToBag",
+            "insertionNode":".buy-box--addtobag"
+          },
+          "content":{
+            "PThumbnail":"#pagination-simplebar .pagination--list li.active > a > img || #pagination-simplebar .pagination--list li > a > img",
+            "PName":".product-title",
+            "Price":".buy-box--messaging_unit-promotion:nth(1) || .product-price"
+          }
+        },
+        "#addToBagBtn":{
+          "button":{
+            "selector":"#addToBagBtn",
+            "insertionNode":"#addToBagContent"
+          },
+          "content":{
+            "PThumbnail":"#product_image",
+            "PName":"#productNameText .productName",
+            "Price":"#priceText > span.salePrice || #priceText"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "GAP",
+      "url": "http://www.gapcanada.ca/",
+      "useStartsWith": true,
+      "polymorphicOn":"button",
+      "buttonList":["#addToBagBtn","#addToBag"],
+      "defs":{
+        "#addToBag":{
+          "button":{
+            "selector":"#addToBag",
+            "insertionNode":".buy-box--addtobag"
+          },
+          "content":{
+            "PThumbnail":"#pagination-simplebar .pagination--list li.active > a > img || #pagination-simplebar .pagination--list li > a > img",
+            "PName":".product-title",
+            "Price":".buy-box--messaging_unit-promotion:nth(1) || .product-price"
+          }
+        },
+        "#addToBagBtn":{
+          "button":{
+            "selector":"#addToBagBtn",
+            "insertionNode":"#addToBagContent"
+          },
+          "content":{
+            "PThumbnail":"#product_image",
+            "PName":"#productNameText .productName",
+            "Price":"#priceText > span.salePrice || #priceText"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "Joe Fresh",
+      "url": "https://www.joefresh.com/ca/",
+      "customHandler":"joeFreshCustomHandler",
+      "retryInterval":1000,
+      "maxRetryAttempts":15,
+      "button":{
+        "selector":"#product-info-content .add-to-bag > .btn",
+        "insertionNode":"#product-info-content .add-to-bag"
+      },
+      "content":{
+        "PThumbnail":"#product-images-display > ul li.product-images-item:first-child > picture > img || img.image-show || img.product-image:nth(1)",
+        "PName":".essential-info h1",
+        "Price":"#product-info-content .product-price .price-group.-new > span || #product-info-content .product-price .price-group.-normal > span || .product-price .price-group.-new > span || .product-price .price-group.-normal > span"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":"#quickview-modal .add-to-bag > .btn",
+            "insertionNode":"#quickview-modal .add-to-bag"
+          },
+          "content":{
+            "PThumbnail":"#quickview-modal .product-image img",
+            "PName":"#quickview-modal .product-info .essential-info h1",
+            "Price":"#quickview-modal .product-info .essential-info .price-amount.-normal || #quickview-modal .product-info .essential-info .price-amount.-new"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "Michael Kors",
+      "url": "http://www.michaelkors.ca/",
+      "button":{
+        "selector":"#addToBag",
+        "insertionNode":"#productDetailsPageContainer:insertafter",
+        "cls":"mkors-btn"
+      },
+      "content":{
+        "PThumbnail":"#productDetailFullSizeImage_flyout > div > img:first-child",
+        "PName":"h1.prod_name",
+        "Price":"#productPrice > span.now_price || #productPrice > span.price || #productPriceinfo > span.price"
+      }
+    },
+    {
+      "PSource": "Reitmans",
+      "url": "http://www.reitmans.com/en",
+      "customHandler":"reitMansCustomHandler",
+      "retryInterval":3000,
+      "maxRetryAttempts":3,
+      "button":{
+        "selector":"#main #pdpMain #add-to-cart",
+        "insertionNode":"#main #pdpMain .product-accordion:prepend"
+      },
+      "content":{
+        "PThumbnail":"#thumbnails ul li.thumb.selected > a > img || .product-primary-image a.main-image img.primary-image",
+        "PName":"h1.product-name",
+        "Price":".attribute.color .value .pricePromo || .attribute.color .value .priceMarkdown || .attribute.color .value .priceRegular"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":"#QuickViewDialog #add-to-cart",
+            "insertionNode":"#QuickViewDialog .product-actions ul.menu:insertbefore"
+          },
+          "content":{
+            "PThumbnail":"#QuickViewDialog .primary-image",
+            "PName":"#QuickViewDialog h1.product-name",
+            "Price":"#QuickViewDialog .product-variations .pricePromo || #QuickViewDialog .product-variations .priceRegular"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "Scotch and Soda",
+      "url": "https://www.scotch-soda.com/ca/en/",
+      "button":{
+        "selector":"#add-to-cart",
+        "insertionNode":"#js-pdp-top-content > .grid--pdp:prepend",
+        "cls":"scotch-soda-btn"
+      },
+      "content":{
+        "PThumbnail":".product-carousel > ul > li:first-child > a > img",
+        "PName":"h2.product-name",
+        "Price":".product-price > .price-sales"
+      }
+    },
+    {
+      "PSource": "Zara",
+      "url": "https://www.zara.com/ca/",
+      "customHandler":"zaraCustomHandler",
+      "retryInterval":3000,
+      "maxRetryAttempts":3,
+      "button":{
+        "selector":"#cart-actions ._add-to-cart-btn",
+        "insertionNode":"#cart-actions"
+      },
+      "content":{
+        "PThumbnail":"#main-images > div img:first-child",
+        "PName":".product-card header > h1",
+        "Price":".product-card .price._product-price || .product-card .price._product-price"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":".popup-content #cart-actions ._add-to-cart-btn",
+            "insertionNode":".popup-content #cart-actions"
+          },
+          "content":{
+            "PThumbnail":".popup-content .image-big",
+            "PName":".popup-content #product-right-menu header > h1",
+            "Price":".popup-content .product-card .price._product-price"
+          }
+        },
+        "multiple":{
+          "button":{
+            "selector":"#cart-actions ._add-to-cart-btn",
+            "insertionNode":"#cart-actions"
+          },
+          "content":{
+            "PThumbnail":"#main-images > div img:first-child",
+            "PName":".product-card header > h1",
+            "Price":".product-card .price._product-price || .product-card .price._product-price"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "East Dane",
+      "url": "https://www.eastdane.com",
+      "prependToBody":true,
+      "customHandler":"shopBopCustomHandler",
+      "retryInterval":1500,
+      "maxRetryAttempts":3,
+      "button":{
+        "selector":"#buyButton",
+        "insertionNode":".add-to-cart-container"
+      },
+      "content":{
+        "PThumbnail":"img#productImage || #thumbnailList li img.thumbImages.thumbSelected",
+        "PName":"#product-information > h1.brand-heading span.product-title",
+        "Price":"#productPrices .priceBlock .salePrice || #productPrices .priceBlock"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":".modal-body #qsBuyButton",
+            "insertionNode":".modal-body #buttonDiv:insertafter"
+          },
+          "content":{
+            "PThumbnail":".modal-body #productDetailMainImage > img",
+            "PName":".modal-body #productTitle",
+            "Price":".modal-body #productPrices .priceBlock .salePrice || .modal-body #productPrices .priceBlock"
+          }
+        }
+      }
+    },
+    {
+      "PSource": "H&M",
+      "url": "http://www2.hm.com/en_ca",
+      "prependToBody":true,
+      "retryInterval":1500,
+      "maxRetryAttempts":3,
+      "button":{
+        "selector":".button-buy",
+        "insertionNode":".product-detail-details"
+      },
+      "content":{
+        "PThumbnail":"img.product-detail-main-image-image",
+        "PName":".product-item-options .product-item-headline",
+        "Price":".product-item-price .price-value"
+      }
+    }
+  ]
+}

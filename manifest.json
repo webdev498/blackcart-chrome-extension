@@ -1,0 +1,88 @@
+{
+  "name": "__MSG_appName__",
+  "version": "0.1.5",
+  "manifest_version": 2,
+  "description": "__MSG_appDescription__",
+  "icons": {
+    "16": "images/icon-16.png",
+    "128": "images/icon-128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "scripts/chromereload.js",
+      "bower_components/jquery/dist/jquery.min.js",
+      "scripts/vendor/underscore-min.js",
+      "scripts/config.js",
+      "scripts/blackcart.js",
+      "scripts/utils.js",
+      "scripts/background.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": {
+      "128": "images/icon-128.png"
+    },
+    "default_title": "__MSG_appName__",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "bower_components/jquery/dist/jquery.min.js",
+        "scripts/vendor/underscore-min.js",
+        "scripts/vendor/backbone-min.js",
+        "scripts/vendor/jquery.form-validator.min.js",
+        "scripts/vendor/jquery.payment.min.js",
+        "scripts/config.js",
+        "scripts/blackcart.js",
+        "scripts/utils.js",
+        "scripts/customhandlers.js",
+        "scripts/collections/order.js",
+        "scripts/views/loading.js",
+        "scripts/views/retailers.js",
+        "scripts/views/blackcarticon.js",
+        "scripts/views/cart.js",
+        "scripts/views/confirm.js",
+        "scripts/views/success.js",
+        "scripts/views/button.js",
+        "scripts/views/walkthrough1.js",
+        "scripts/views/walkthrough2.js",
+        "scripts/views/walkthrough3.js",
+        "scripts/contentscript.js"
+      ],
+      "css":[
+        "styles/vendor/font-awesome.min.css",
+        "styles/main.css"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    "config/retailers.json",
+    "scripts/templates/*",
+    "images/*",
+    "styles/vendor/font-awesome.min.css",
+    "bower_components/bootstrap/dist/css/bootstrap.min.css",
+    "bower_components/bootstrap/dist/css/bootstrap-theme.min.css",
+    "styles/chromestyle.css",
+    "styles/main.css",
+    "styles/modal.css",
+    "fonts/*",
+    "gfonts/*"
+  ],
+  "externally_connectable": {
+    "matches": ["*://blackcart.co/*"]
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "<all_urls>"
+  ]
+}

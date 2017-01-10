@@ -1,0 +1,94 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#modal-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    background: rgba(0, 0, 0, 0.57);
+    z-index: 300;
+}
+#instruction-modal {
+    position: absolute;
+    top: 150px;
+    left: 10px;
+    right: 10px;
+    width: 375px;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 0px 10px 0px;
+    z-index:301;
+    font-family:"Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	letter-spacing:normal;
+}
+#instruction-modal > .header {
+    padding: 10px 10px 10px 20px;
+    background: #2193E6;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 4px 4px 0 0;
+    border-bottom: 0;
+}
+#instruction-modal > .header > .close {
+    float: right;
+    width: 48px;
+    opacity: inherit;
+    font-size:18px;
+    margin-top: 3px;
+}
+#instruction-modal > .header > .close > .close-modal {
+    border-radius: 50%;
+    float: right;
+    color: #fff;
+    font-weight: normal;
+    text-shadow: none;
+    cursor: pointer;
+}
+#instruction-modal > .header > .close > .close-modal:hover, #instruction-modal > .header > .close > .close-modal:focus, #instruction-modal > .header > .close > .close-modal:active {
+    text-decoration: none;
+    opacity: .7;
+}
+#instruction-modal > .content {
+    padding: 25px 20px 20px;
+    background: #fff;
+    font-size: 14px;
+    line-height:20px;
+    color: #333;
+    border-radius: 0 0 4px 4px;
+    border-top: 0;
+}
+#instruction-modal > .content > img {
+    width:50%;
+    border:2px dotted #DDD;
+    margin:15px 0;
+}
+#instruction-modal > .content > .continue {
+    padding: 8px 25px;
+    width: 100%;
+    z-index: 999;
+    background: #727272;
+    border-bottom: 1px solid #4D4D4D;
+    color: #fff;
+    font-size: 14px;
+    line-height:45px;
+    font-weight: 400;
+    border-radius:3px;
+    cursor:pointer;
+}
+#instruction-modal > .content > .continue:hover {
+    background: #848484;
+	text-decoration:none;
+}
+#instruction-modal > .arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #fff;
+    position: absolute;
+    right: -12px;
+    top:50%;
+}

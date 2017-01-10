@@ -1,0 +1,25 @@
+<div class="chrome-widget">
+  <div class="cont_tlo" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;">
+    <div class="arr"></div>
+    <div class="cont_tlo_hed clearfix">
+      <img src="<%- chromeURL('images/sub/logo_hed.png') %>" width="100">
+      <span><a href="#"><i class="fa fa-minus-circle fa-1x" id="minimize-cart"></i></a></span>
+    </div>
+    <div class="container-fluid brands-wrapper">
+      <h4 align="center" style="padding:15px 10px 10px;">Supported Retailers</h4>
+      <div class="row">
+      <% _.each(brands,function(brand){ %>
+        <div class="col-md-6">
+          <a class="brand-name" href="<%- brand.URL %>" target="_blank" title="<%- brand.BTitle %>" style="font-size:13px;">
+            <%- brand.BTitle %>
+          </a>
+          <br/>
+          <a href="<%- brand.URL %>" target="_blank" title="<%- brand.BTitle %>">
+            <img src="<%- brand.BThumbnail %>" alt="<%- brand.BTitle %>" />
+          </a>
+        </div>
+      <% }); %>
+      </div>
+    </div>
+  </div>
+</div>

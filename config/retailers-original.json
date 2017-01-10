@@ -1,0 +1,230 @@
+{
+    "retailers": [
+        {
+            "retailerName":"Apache",
+            "url":"http://userver",
+            "button":{
+                "selector":".validator p a",
+                "insertionNode":".validator"
+            },
+            "content":{
+                "image":".page_header.floating_element img",
+                "productName":".section_header:nth-child(3)",
+                "cost":"#cost"
+            }
+        },
+        {
+            "retailerName": "Topshop (On the Bay)",
+            "url": "http://www.thebay.com/webapp/wcs/stores/servlet/en/thebay/womens-apparel/Topshop",
+            "button":{
+                "selector":"#addtobag",
+                "insertionNode":".inventoryCheck"
+            },
+            "content":{
+                "image":"#lupaImgflyzoom",
+                "productName":"h2.detial",
+                "cost":"#price"
+            }
+        },
+        {
+            "retailerName": "TopMan",
+            "url": "http://www.thebay.com/webapp/wcs/stores/servlet/en/thebay/brand/TOPMAN/mens",
+            "button":{
+                "selector":"#addtobag",
+                "insertionNode":".inventoryCheck"
+            },
+            "content":{
+                "image":"#lupaImgflyzoom",
+                "productName":"h2.detial",
+                "cost":"#price"
+            }
+        },
+        {
+            "retailerName": "The Bay",
+            "url": "http://www.thebay.com/",
+            "button":{
+                "selector":"#addtobag",
+                "insertionNode":".inventoryCheck"
+            },
+            "content":{
+                "image":"#lupaImgflyzoom",
+                "productName":"h2.detial",
+                "cost":"#price"
+            }
+        },
+        {
+            "retailerName": "Simons",
+            "url": "http://www.simons.ca/"
+        },
+        {
+            "retailerName": "Bench",
+            "url": "http://bench.ca/"
+        },
+        {
+            "retailerName": "LuLu Lemon",
+            "url": "http://shop.lululemon.com/"
+        },
+        {
+            "retailerName": "Live Out There",
+            "url": "https://www.liveoutthere.com/"
+        },
+        {
+            "retailerName": "33-off",
+            "url": "http://www.33-off.com/"
+        },
+        {
+            "retailerName": "New Balance",
+            "url": "http://www.newbalance.ca/"
+        },
+        {
+            "retailerName": "The North Face",
+            "url": "https://www.thenorthface.com/en_ca/homepage.html"
+        },
+        {
+            "retailerName": "The Running Room",
+            "url": "http://www.runningroom.com"
+        },
+        {
+            "retailerName": "Sportcheck",
+            "url": "https://www.sportchek.ca"
+        },
+        {
+            "retailerName": "Roots",
+            "url": "https://www.roots.com/ca/en/homepage"
+        },
+        {
+            "retailerName": "Aldo",
+            "url": "http://www.aldoshoes.com/ca/en"
+        },
+        {
+            "retailerName": "Brown's",
+            "url": "http://www.brownsshoes.com/"
+        },
+        {
+            "retailerName": "Spring",
+            "url": "http://www.callitspring.com/ca/en"
+        },
+        {
+            "retailerName": "Town Shoes",
+            "url": "http://ts.townshoes.ca/store/"
+        },
+        {
+            "retailerName": "The Shoe Company",
+            "url": "http://theshoecompany.townshoes.ca/"
+        },
+        {
+            "retailerName": "Shoe me",
+            "url": "http://www.shoeme.ca/"
+        },
+        {
+            "retailerName": "Keen",
+            "url": "http://www.keenfootwear.com/en-ca/"
+        },
+        {
+            "retailerName": "Quarks",
+            "url": "https://www.quarkshoes.com"
+        },
+        {
+            "retailerName": "Aritzia",
+            "url": "http://aritzia.com/en/clothing"
+        },
+        {
+            "retailerName": "Boohoo",
+            "url": "http://www.boohoo.com/",
+            "button":{
+                "selector":"button.success.js-addproduct",
+                "insertionNode":".prod-detail-buttons .box-body"
+            },
+            "content":{
+                "image":"#productdetail-image a img",
+                "productName":".details-column h1:first-child",
+                "cost":"#price"
+            }
+        },
+        {
+            "retailerName": "Ego Closet",
+            "url": "http://www.egocloset.com/",
+            "button":{
+                "selector":".buttons-container[id*=cart_add_block_]",
+                "insertionNode":"[id*=add_to_cart_update_]"
+            },
+            "content":{
+                "image":".cm-image-previewer.cm-previewer.previewer img",
+                "productName":".mainbox-title",
+                "cost":".price-num:last-child"
+            }
+        },
+        {
+            "retailerName": "Fame Drop",
+            "url": "https://famedrop.com/"
+        },
+        {
+            "retailerName": "Jean Machine",
+            "url": "http://jeanmachine.com/"
+        },
+        {
+            "retailerName": "Shopbop",
+            "url": "https://www.shopbop.com"
+        },
+        {
+            "retailerName": "Shoptiques",
+            "url": "http://www.shoptiques.com/boutiques"
+        },
+        {
+            "retailerName": "Urban Outfitters",
+            "url": "http://www.urbanoutfitters.com/ca/en/index.jsp"
+        },
+        {
+            "retailerName": "Alternative Apparel",
+            "url": "https://www.alternativeapparel.com"
+        },
+        {
+            "retailerName": "Banana Republic",
+            "url": "http://bananarepublic.ca/"
+        },
+        {
+            "retailerName": "Club Monaco",
+            "url": "http://www.clubmonaco.ca/"
+        },
+        {
+            "retailerName": "Forever 21",
+            "url": "http://www.forever21.com/shop/ca/en"
+        },
+        {
+            "retailerName": "Gap",
+            "url": "http://www.gapcanada.ca/"
+        },
+        {
+            "retailerName": "Joe Fresh",
+            "url": "https://www.joefresh.com/ca/"
+        },
+        {
+            "retailerName": "Michael Kors",
+            "url": "http://www.michaelkors.ca/",
+            "button":{
+                "selector":"#addToBag",
+                "insertionNode":".product_details_right_sidebar.pdp .inner_container"
+            }
+        },
+        {
+            "retailerName": "Old Navy",
+            "url": "http://www.oldnavy.ca/"
+        },
+        {
+            "retailerName": "Reitmans",
+            "url": "http://www.reitmans.com/on/demandware.store/Sites-Reitmans_CA-Site/"
+        },
+        {
+            "retailerName": "Scotch and Soda",
+            "url": "https://www.scotch-soda.com/ca/en/",
+            "button":{
+                "selector":"#add-to-cart",
+                "insertionNode":".product-add-to-cart form"
+            }
+        },
+        {
+            "retailerName": "Zara",
+            "url": "https://www.zara.com/ca/"
+        }
+    ]
+}
